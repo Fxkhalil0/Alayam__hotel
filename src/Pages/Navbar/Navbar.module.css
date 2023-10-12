@@ -1,0 +1,40 @@
+.nav__content{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.nav__content > img{
+    width: 8%;
+}
+.right__side{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.nav__links{
+    display: flex;
+    gap: 15px;
+}
+.nav__links > li > a{
+    color: #213D48;
+}
+.nav__icons{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 23px;
+}
+.nav__icons > p{
+    color: #C87D00;
+    border-bottom: 4px dotted #C87D00;
+    cursor: pointer;
+}
+.nav__icons > p:last-of-type{
+    color: #C87D00;
+    border: 3px solid #C87D00;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}

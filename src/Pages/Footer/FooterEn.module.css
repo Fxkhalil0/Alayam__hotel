@@ -1,0 +1,72 @@
+footer{
+    background-color: #F3F2F0;
+}
+.footer__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__content > .logo__div{
+    width: 22%;
+}
+.footer__content > .logo__div > img{
+    width: 50%;
+}
+.footer__content > ul{
+    width: 22%;
+}
+
+.footer__content > ul > h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.footer__content > ul > li:not(:last-of-type){
+    margin-bottom: 10px;
+}
+.footer__content > .contact__div{
+    width: 22%;
+    margin-top: 15px;
+}
+.footer__content > .contact__div > h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.footer__content > .contact__div > h2:last-of-type{
+    font-size: 25px;
+    margin: 20px 0px;
+}
+.contact__icons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+    color: #C87D00;
+    cursor: pointer;
+}
+.contact__num{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.contact__num > i{
+    font-size: 25px;
+    color: #C87D00;
+    cursor: pointer;
+}
+.contact__num > p{
+    font-size: 20px;
+}
+.border__bottom{
+    background-color: #999;
+    height: 1px;
+    width: 100%;
+    margin-top: 50px;
+}
+.copyright{
+    margin-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #213D48;
+}

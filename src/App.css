@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #213D48;
+}
+
+h2 {
+    font-size: 55px;
+    color: #213D48;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.css-1u23akw-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+    background-color: #C87D00 !important;
+}
+.react-multiple-carousel__arrow {
+    background: #c87f0082 !important;
+}
+
+.react-multiple-carousel__arrow:hover {
+    background: #C87D00 !important;
+}
+.p-galleria .p-galleria-thumbnail-container {
+    height: 100px !important;
+    padding: 0 10px !important;
+}
+.p-galleria-thumbnail-container {
+    align-items: center !important;
+}
+.p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-prev, .p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-next {
+    background-color: #C87D00 !important;
+}
+.p-galleria-item > img {
+    border-top-right-radius: 12px !important;
+    border-top-left-radius: 12px !important;
+}
+.p-galleria-thumbnail-wrapper {
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+}
+.p-galleria-thumbnail-item-content > img{
+    width: 105% !important;
+    height: 75px !important;
+    border-radius: 12px !important;
+}
