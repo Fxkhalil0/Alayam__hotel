@@ -140,3 +140,21 @@ width: 22%;
     height: 455px;
     border-top: 1px solid #D6D6D6;
 }
+.booking__form {
+    width: 100%;
+}
+.booking__form > h2{
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+.date__picker__labels{
+    display: flex;
+    align-items: center;
+    gap: 350px;
+    margin-bottom: 10px;
+}
+.date__picker{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}

@@ -10,11 +10,23 @@ import { Galleria } from 'primereact/galleria';
 import { Button } from 'primereact/button';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import FooterEn from "../Footer/FooterEn";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import { DatePicker, Space } from 'antd';
+import moment from 'moment'
+dayjs.extend(customParseFormat);
+const { RangePicker } = DatePicker;
 
 
 function DescriptionEn() {
     const [images, setImages] = useState(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [startDate, setStartDate] = useState()
+    const [endDate, setEndDate] = useState()
+    const dateFormat = 'DD/MM/YYYY';
+
     const responsiveOptions = [
         {
             breakpoint: '991px',
@@ -102,7 +114,7 @@ function DescriptionEn() {
             alt: 'Description for Image 3',
             title: 'Title 3'
         },
-        
+
     ];
 
     useEffect(() => {
@@ -215,12 +227,106 @@ function DescriptionEn() {
             </div>
             <div className={style["right__div"]}>
                 <div className={style["map"]}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463878.29488595825!2d46.82252880000001!3d24.725191849999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1697056400429!5m2!1sen!2seg" style={{border:0, width:"100%", height:"455px"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463878.29488595825!2d46.82252880000001!3d24.725191849999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1697056400429!5m2!1sen!2seg" style={{ border: 0, width: "100%", height: "455px" }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div className={style["booking__form"]}>
-                    {/* <div className="container"> */}
-                        <h2>Book this room Now!</h2>
-                    {/* </div> */}
+                    <h2>Book this room Now!</h2>
+                    <form className={style["booking__form__content"]}>
+                        <Box
+                            component="form"
+                            sx={{
+                                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                            style={{ display: 'flex' }}
+                        >
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="First Name"
+                                placeholder="Your first name"
+                            />
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Middle Name"
+                                placeholder="Your middle name"
+                            />
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Last Name"
+                                placeholder="Your last name"
+                            />
+                        </Box>
+                        <Box
+                            component="form"
+                            sx={{
+                                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                            style={{ display: 'flex', marginTop: '20px' }}
+                        >
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Email"
+                                placeholder="Your email"
+                                style={{ width: '47.5%' }}
+                            />
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Phone"
+                                placeholder="Your phone number"
+                                style={{ width: '47.5%' }}
+                            />
+                        </Box>
+                        <Box
+                            component="form"
+                            sx={{
+                                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                            style={{ margin: '20px 0px' }}
+                        >
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="ID Number"
+                                placeholder="Your ID number"
+                                style={{ width: '97%' }}
+                            />
+                        </Box>
+                        <div className={style["date__picker__labels"]}>
+                            <label>Start Date</label>
+                            <label>End Date</label>
+                        </div>
+                        <div className={style["date__picker"]}>
+                            <DatePicker
+                                format={dateFormat}
+                                style={{ width: '47.5%', borderRadius: '4px', padding: '16.5px 14px' }}
+                                onChange={(date)=> {
+                                    console.log(typeof date.$d); // Date object
+                                    setStartDate(date)
+                                }}
+                                value={startDate}
+                                />
+                                
+                            <DatePicker
+                                format={dateFormat}
+                                style={{ width: '47.5%', borderRadius: '4px', padding: '16.5px 14px' }} 
+                                onChange={(date)=> {
+                                    console.log(date); // Date object
+                                    setEndDate(date)
+                                }}
+                                value={endDate}
+                                />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
