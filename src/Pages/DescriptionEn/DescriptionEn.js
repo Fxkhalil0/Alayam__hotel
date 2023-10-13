@@ -302,8 +302,8 @@ function DescriptionEn() {
                             />
                         </Box>
                         <div className={style["date__picker__labels"]}>
-                            <label>Start Date</label>
-                            <label>End Date</label>
+                            <label>Check in</label>
+                            <label>Check out</label>
                         </div>
                         <div className={style["date__picker"]}>
                             <DatePicker
@@ -326,7 +326,13 @@ function DescriptionEn() {
                                 value={endDate}
                                 />
                         </div>
+                        <div className={style["booking__button"]}>
+                            <button>Submit Booking</button>
+                        </div>
                     </form>
+                    <h2>Booking Rules:</h2>
+                    <p>1)</p>
+                    <p></p>
                 </div>
             </div>
         </div>
