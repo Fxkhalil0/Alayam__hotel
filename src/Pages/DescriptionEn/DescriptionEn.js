@@ -32,6 +32,8 @@ function DescriptionEn() {
     const [endDate, setEndDate] = useState()
     const [userRate, setUserRate] = useState(null)
     const [rateHover, setRateHover] = useState(null)
+    const [userName, setUserName] = useState("Your Name")
+    const [userComment, setUserComment] = useState("Here's your comment")
 
     const dateFormat = 'DD/MM/YYYY';
 
@@ -195,7 +197,7 @@ function DescriptionEn() {
             <div className={style["left__div"]}>
                 <div className={style["nav__icons"]}>
                     <div className={style['icon']}>
-                        <img src={BedIcon} alt='' />
+                        <i class='bx bx-category' style={{color:'#858585', fontSize: '27px'}}></i>
                         <p>4 Beds</p>
                     </div>
                     <div className={style['icon']}>
@@ -533,6 +535,7 @@ function DescriptionEn() {
                                 label="Name"
                                 placeholder="Your name"
                                 style={{ width: '100%', marginBottom: '15px' }}
+                                onChange={(e) => setUserName(e.target.value)}
 
                             />
                             <TextField
@@ -540,15 +543,18 @@ function DescriptionEn() {
                                 id="outlined-required"
                                 label="Email"
                                 placeholder="Your email address"
-                                style={{ width: '100%' , marginBottom: '30px'}}
+                                style={{ width: '100%', marginBottom: '30px' }}
 
                             />
                         </Box>
-                        <StyledTextarea
-                            aria-label="minimum height"
-                            minRows={3}
-                            placeholder="Add your commenr"
+                        <textarea
+                            placeholder="Add your comment"
+                            onChange={(e) => setUserComment(e.target.value)}
+                            value={userComment}
                         />
+                        <div className={style["reveiw__button"]}>
+                            <button>Submit</button>
+                        </div>
                     </form>
                     <div className={style['reveiw__card']}>
                         <div className={style['padding__div']}>
@@ -586,11 +592,11 @@ function DescriptionEn() {
                                     <div className={style['cleint__info']}>
                                         <img src={User} alt='' />
                                         <div className={style['name__date']}>
-                                            <h3>Mohammed Elsaid</h3>
+                                            <h3>{userName}</h3>
                                             <p>Jan 20, 2023</p>
                                         </div>
                                     </div>
-                                    <p>I quickly found the right tour for me, but I had a few questions about the hotel, I wrote to tech support and they answered all my questions within an hour. The vacation itself was perfect. Thank you very much. I will come back again and again.</p>
+                                    <p>{userComment}</p>
                                 </div>
                             </div>
                         </div>

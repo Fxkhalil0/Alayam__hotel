@@ -17,6 +17,11 @@ function RoomsEn() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showFilter, setShowFilter] = useState(false)
     const [selected, setSelected] = useState("")
+    const [showMenu, setShowMenu] = useState(false)
+
+    const toggleShowMenu = () => {
+        setShowMenu(!showMenu)
+    };
     const openModal = () => {
         setIsModalOpen(true);
     };
@@ -38,10 +43,20 @@ function RoomsEn() {
                     <h2>Our Rooms</h2>
                     <div className={style['search__bar']}>
                         <div className={style['beds__num']}>
-                            <img src={Bed} alt='' />
-                            <div className={style['search__input']}>
-                                <label>Beds</label>
-                                <input type='text' placeholder='Search Beds' />
+                            <i class='bx bx-category' style={{ color: '#858585', fontSize: '27px' }}></i>
+                            <div className={style['search__input']} onClick={toggleShowMenu}>
+                                <label>Category</label>
+                                <input type='text' placeholder='Select Category' readOnly />
+                                {showMenu &&
+                                    <div className={style["category__menu"]}>
+                                        <ul>
+                                            <li>Double room</li>
+                                            <li>Triple Room</li>
+                                            <li>Small Suite (2 rooms)</li>
+                                            <li>Large suite (3 rooms)</li>
+                                        </ul>
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div className={style['date']}>
@@ -72,7 +87,7 @@ function RoomsEn() {
             <div className={style["our__rooms"]}>
                 <div className="container">
                     <div className={style["filter__bar"]}>
-                        <p>Rooms</p>
+                        <p>All Rooms</p>
                         <div className={style["right__filter"]}>
                             <div className={style["filter"]}>
                                 <i class="fa-solid fa-sliders"></i>

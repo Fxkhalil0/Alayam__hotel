@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import style from './HomeEn.module.css'
 import NavbarEn from '../Navbar/NavbarEn'
-import Hero from '../../assets/Home/Rectangle 5.png'
+import Hero from '../../assets/_DSF4017.jpg'
 import Bed from '../../assets/Home/search/Mask group.svg'
 import Calender from '../../assets/Home/search/icon (1).svg'
 import Search from '../../assets/Home/search/icon (2).svg'
@@ -26,6 +26,12 @@ import FooterEn from '../Footer/FooterEn'
 function HomeEn() {
     const [value, setValue] = useState(dayjs('2022-04-17'));
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showMenu, setShowMenu] = useState(false)
+
+    const toggleShowMenu = () => {
+        setShowMenu(!showMenu)
+    };
+
     const openModal = () => {
         setIsModalOpen(true);
     };
@@ -61,15 +67,25 @@ function HomeEn() {
                         <div className={style['hero__content']}>
                             <h1>Book Now your room for</h1>
                             <h1>your vacation and Enjoy it!</h1>
-                            <p>We have several thousand rooms for</p>
-                            <p>every taste in every corner of the hotel</p>
+                            {/* <p>We have several thousand rooms for</p>
+                            <p>every taste in every corner of the hotel</p> */}
                         </div>
                         <div className={style['search__bar']}>
                             <div className={style['beds__num']}>
-                                <img src={Bed} alt='' />
-                                <div className={style['search__input']}>
-                                    <label>Beds</label>
-                                    <input type='text' placeholder='Search Beds' />
+                                <i class='bx bx-category' style={{ color: '#858585', fontSize: '27px' }}></i>
+                                <div className={style['search__input']} onClick={toggleShowMenu}>
+                                    <label>Category</label>
+                                    <input type='text' placeholder='Select Category' readOnly />
+                                    {showMenu &&
+                                        <div className={style["filter__menu"]}>
+                                            <ul>
+                                                <li>Double room</li>
+                                                <li>Triple Room</li>
+                                                <li>Small Suite (2 rooms)</li>
+                                                <li>Large suite (3 rooms)</li>
+                                            </ul>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                             <div className={style['date']}>
